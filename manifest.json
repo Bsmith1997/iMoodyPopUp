@@ -1,0 +1,8 @@
+{
+    "manifest_version" : 2,
+    "name" : "iMoody",
+    "description" : "Quick launch for iMoody application",
+    "version" : "1.0.0",
+    "permissions" : ["ActiveTab"]
+
+}
