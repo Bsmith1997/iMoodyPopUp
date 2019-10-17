@@ -1,4 +1,34 @@
-keys = ['fname', 'lname', 'email', 'password', 'mood1', 'mood2'];
+keys = ['fname', 'lname', 'email', 'password', 'cat1', 'cat2', 'cat3', 'cat4', 'cat5'];
+activities = {
+    "cat1": ['soccer', 'football', 'basketball', 'golf'],
+    "cat2": ['read a book', 'read a magazine', 'read the newspaper'],
+    "cat3": ['cook a meal'],
+    "cat4": ['hiking', 'biking', 'go to the park', 'swimming'],
+    "cat5": ['board games']
+};
+
+var it = ['cat1', 'cat2', 'cat3', 'cat4', 'cat5']
+var numEvents = 5;
+var events = [];
+function getRandomEvents() {
+    for(var i = 0; i < numEvents; i++) {
+        if(localStorage.getItem(it[i])) {
+            var rand = Math.floor(Math.random() * activities[it[i]].length);
+            events.push(activities[it[i]][rand]);
+        }
+    }
+
+    for(var i = 0; i < events.length; i++) {
+        document.getElementById('actlist').innerHTML += "<li>" + events[i] + "</li>";        
+    }
+}
+
+function clearCategories() {
+    for(var i = 0; i < it.length; i++) {
+        localStorage.removeItem(it[i]);
+    }
+}
+
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {

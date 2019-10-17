@@ -17,10 +17,11 @@
     rel="stylesheet" 
     href="style.css"
     />
+    
   </head>
   <script src="account.js"></script>
   
-  <body onload="renderValues(); getEmojiVar();">
+  <body onload="renderValues(); getEmojiVar(); clearCategories()">
     <div class="modal-header">
       <h1 class="logo">
         iMoody
@@ -29,13 +30,13 @@
       </h1>
     </div>
     <div class="modal-content">
-    <p>PSelect the types of activities you would like to see from the categories below</p> <br>
+    <p>Select the types of activities you would like to see from the categories below</p> <br>
     <form action="account.html">
-        <input type="checkbox" name="cat1" value="sports"> Sports<br>
+        <input type="checkbox" name="cat1" value="Sports"> Sports<br>
         <input type="checkbox" name="cat2" value="Literature"> Literature<br>
-        <input type="checkbox" name="cat3" value="Cooking" checked> Cooking<br>
-        <input type="checkbox" name="cat4" value="Outdoor" checked> Outdoor Activities<br>
-        <input type="checkbox" name="cat5" value="Games" checked> Board Games<br>
+        <input type="checkbox" name="cat3" value="Cooking"> Cooking<br>
+        <input type="checkbox" name="cat4" value="Outdoor"> Outdoor Activities<br>
+        <input type="checkbox" name="cat5" value="Games"> Board Games<br>
         <input type="submit" value="Submit">
       </form>
 

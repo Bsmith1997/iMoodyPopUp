@@ -17,9 +17,11 @@
     rel="stylesheet" 
     href="style.css"
     />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   </head>
-  <script src="account.js"></script>
-  <body onload="renderValues();">
+  <body onload="renderValues(); getRandomEvents()">
     <div class="modal-header">
       <h1 class="logo">
         iMoody
@@ -28,15 +30,11 @@
       </h1>
     </div>
     <div class="modal-content">
-    <p>Please click on the emoji that best describes your current mood!</p> <br>
-    <form action="timer.html">
-        <input type="radio" name="mood" value="5" checked> &#128514;<br>
-        <input type="radio" name="mood" value="4"> &#128515;<br>
-        <input type="radio" name="mood" value="3"> &#128528;<br>
-        <input type="radio" name="mood" value="2"> &#128530;<br>
-        <input type="radio" name="mood" value="1"> &#128560; <br> <br>
-        <input type="submit" value="Submit"> <br> <br>
-    </form> <br>
+    <p>Here are a list of suggestions that you might want to do!</p>
+    <ul id="actlist">
+    </ul>
+    <a class="btn btn-primary" href="account.html">Accept</a>
+    <a class="btn btn-danger" href="suggestions.html">Get new Activities</a>
 
     </div>
     <div class="modal-icons">
@@ -53,5 +51,6 @@
         </div>
       </div>
     </div>
+    <script src="account.js"></script>
   </body>
 </html>
