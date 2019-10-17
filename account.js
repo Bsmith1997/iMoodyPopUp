@@ -1,4 +1,4 @@
-keys = ['fname', 'lname', 'email', 'password'];
+keys = ['fname', 'lname', 'email', 'password', 'mood1', 'mood2'];
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -15,8 +15,9 @@ function getUrlVars() {
         if(element !== null && element !== undefined) {
             document.getElementById(keys[i]).innerHTML = vars[keys[i]];
         }
-
-        localStorage.setItem(keys[i], vars[keys[i]]);
+        if(vars[keys[i]] != undefined && vars[keys[i]] != null) {
+            localStorage.setItem(keys[i], vars[keys[i]]);
+        }
     }
 }
 
@@ -39,10 +40,14 @@ function getEmojiVar() {
         vars[key] = value;
     });
 
-    if(localStorage.getItem('mood') !== undefined) {
-        localStorage.setItem("mood2", vars['mood']);
+    if(localStorage.getItem('init_time') == undefined || vars['mood'] != null) {
+        localStorage.setItem('mood', vars['mood']);
+        localStorage.setItem('init_time', new Date().getTime());
         return;
     }
 
-    document.getElementById('mood').innerHTML = vars['mood'];
+    if(localStorage.getItem('mood') != 'undefined' && vars['mood2'] != null) {
+        localStorage.setItem("mood2", vars['mood2']);
+        localStorage.setItem('total_time', new Date().getTime());
+    }
 }

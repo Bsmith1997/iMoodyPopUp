@@ -39,12 +39,19 @@
   img {
     width: 30px;
   }
+
+  .btn {
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
   .modal-header {
     align-items: center;
     border-bottom: 0.5px solid #dadada;
   }
   .modal-content {
     padding: 0 22px;
+    align-items: center;
   }
   .modal-icons {
     border-top: 0.5px solid #dadada;
