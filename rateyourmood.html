@@ -17,35 +17,34 @@
     rel="stylesheet" 
     href="style.css"
     />
-
   </head>
-
-  <body>
+  <script src="account.js"></script>
+  <body onload="renderValues(); getEmojiVar();">
     <div class="modal-header">
       <h1 class="logo">
         iMoody
         <span class="version">(1.0.0)</span>
+        <span id="fname"></span>
       </h1>
     </div>
     <div class="modal-content">
-      <p>Giving you more information about your social media usage</p>
+    <p>Please click on the emoji that best describes your current mood!</p> <br>
+    <form action="timer.html">
+        <input type="radio" name="mood" value="crying" checked> &#128514;<br>
+        <input type="radio" name="mood" value="smiley"> &#128515;<br>
+        <input type="radio" name="mood" value="neutral"> &#128528;<br>
+        <input type="radio" name="mood" value="sadface"> &#128530;<br>
+        <input type="radio" name="mood" value="upset"> &#128560; <br> <br>
+        <input type="submit" value="Submit"> <br> <br>
+    </form> <br>
+
     </div>
     <div class="modal-icons">
       <div class="flex-container">
         <div class="flex">
-          <a href="signin.html" target="_blank">
-            <i class="fa fa-sign-in" style="color:darksalmon "></i>
+          <a href="account.html" target="_blank">
+            <i class="fa fa-sign-out" style="color:darksalmon "></i>
           </a>
-        </div>
-        <div class="flex">
-          <a href="signup.html" target="_blank">
-            <i class="fa fa-user-plus" style="color:darksalmon "></i>
-          </a>
-        </div>
-        <div class="flex">
-            <a href="popup.html" target="_blank">
-              <i class="fa fa-sign-out" style="color:darksalmon "></i>
-            </a>
         </div>
       </div>
     </div>

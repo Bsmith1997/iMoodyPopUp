@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>iMoody Sign Up</title>
+    <title>iMoody Sign In</title>
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
@@ -31,10 +31,9 @@
       <p>Giving you more information about your social media usage</p>
     </div>
     <form id="myForm" align="middle" method="GET" action="account.html">
-        First name: <input type="text" name="fname" required><br>
-        Last name: <input type="text" name="lname" required><br>
         Email Address: <input type="text" name="email" required><br>
-        Password: <input type="password" name="password" required><br>
+        Password: <input type="hidden" name="password" required><br>
+        <input type="button" onclick="location.href='popup.html'" value="Go back!" />
         <input type="submit" value="Submit">
       </form>
       </div>
