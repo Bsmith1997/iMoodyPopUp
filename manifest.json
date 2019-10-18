@@ -2,7 +2,10 @@
     "manifest_version" : 2,
     "name" : "iMoody",
     "description" : "Quick launch for iMoody application",
-    "version" : "1.0.0",
-    "permissions" : ["ActiveTab"]
+    "version" : "1.0.1",
+    "permissions" : ["ActiveTab"],
+    "browser_action" : {
+        "default_popup" :"popup.html"
+    }
 
 }
