@@ -121,14 +121,12 @@ function getEmojiVar() {
     }
 }
 
-function jsonify(key, value) {
-    values = JSON.stringify({
-        "val": value
+function retrieve_value(key) {
+    value = null;
+    chrome.storage.sync.get(key, function (obj) {
+        console.log(key, obj);
+        value = obj.key;
     });
-    var json_file = {};
-    json_file[key] = values;
-    chrom.storage.sync.set(json_file, function() {
-        console.log("Saved", key, value);
-    })
+
+    return value;
 }
-  

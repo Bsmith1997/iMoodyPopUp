@@ -17,13 +17,11 @@
     rel="stylesheet" 
     href="style.css"
     />
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
   </head>
-  <script src="account.js"></script>
-  <body onload="renderValues(); getEmojiVar();">
+  <body>
+    <script src="functions.js"></script>
     <div class="modal-header">
       <h1 class="logo">
         iMoody
@@ -34,16 +32,16 @@
     <div class="modal-content">
         <canvas id="myChart" width="400" height="400"></canvas> <br>
         <a href="suggestions.html" class="btn btn-danger">Click for suggestions!</a>
-        <script src="chart.js"></script>  
     </div>
     <div class="modal-icons">
       <div class="flex-container">
         <div class="flex">
-          <a href="account.html" target="_blank">
+          <a id="logout_button">
             <i class="fa fa-sign-out" style="color:darksalmon "></i>
           </a>
         </div>
       </div>
     </div>
+    <script src="chart.js"></script>  
   </body>
 </html>

@@ -1,3 +1,9 @@
+document.getElementById("logout_button").addEventListener("click", signout);
+
+var start_time = retrieve_value("start_time");
+var end_time = retrieve_value("end_time");
+var first_emoji = retrieve_value("first_emoji");
+var second_emoji = retrieve_value("second_emoji");
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
@@ -7,9 +13,9 @@ var myChart = new Chart(ctx, {
     data: {
         datasets: [{
             label: 'Your mood over time',
-            data: [{x: 0, y: localStorage.getItem("mood")}, 
-            {x: ((localStorage.getItem('total_time') - localStorage.getItem('init_time')) / 1000)
-            , y: localStorage.getItem("mood2")}],
+            data: [{x: 0, y: first_emoji}, 
+            {x: ((end_time - start_time) / 1000)
+            , y: second_emoji}],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
