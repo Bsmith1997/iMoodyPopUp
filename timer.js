@@ -1,3 +1,14 @@
+document.getElementById("logout_button").addEventListener("click", signout);
+form = document.getElementById("form");
+form.addEventListener("submit", function() {
+  chrome.browserAction.setPopup({popup: "results.html"});
+  window.location.href = "results.html";
+  console.log("Saving data...");
+  jsonify("end_time", new Date.getTime());
+  jsonify("second_emoji", form.value);
+
+});
+/*
 // Set the date we're counting down to
 var current = new Date().getTime();
 
@@ -19,4 +30,4 @@ var x = setInterval(function() {
   // Display the result in the element with id="demo"
   document.getElementById("timer").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
-}, 1000);
+}, 1000);*/
