@@ -4,6 +4,7 @@ var start_time = retrieve_value("start_time");
 var end_time = retrieve_value("end_time");
 var first_emoji = retrieve_value("first_emoji");
 var second_emoji = retrieve_value("second_emoji");
+console.log((end_time - start_time) / 1000);
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
@@ -40,23 +41,25 @@ var myChart = new Chart(ctx, {
             yAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Mood Rating'
+                    labelString: 'Mood Rating',
                 },
+
                 ticks: {
-                    beginAtZero: true
+                    min: 1,
+                    max: 5,
+                    stepSize: 1
                 }
             }],
 
             xAxes: [{
-            scaleLabel: {
-                display: true,
-                labelString: 'Time in seconds'
-            },
-            ticks: {
-                    beginAtZero: true
-                }
-            }
-            ]
+                type: 'linear',
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Time in seconds'
+                },
+
+                position: 'bottom'
+            }]
         }
     }
 });
