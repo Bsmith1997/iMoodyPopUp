@@ -18,8 +18,8 @@
     href="style.css"
     />
   </head>
-  <script src="account.js"></script>
-  <body onload="renderValues(); getEmojiVar();">
+  <script src="functions.js"></script>
+  <body id="body">
     <div class="modal-header">
       <h1 class="logo">
         iMoody
@@ -42,11 +42,13 @@
     <div class="modal-icons">
       <div class="flex-container">
         <div class="flex">
-          <a href="popup.html" target="_blank">
+          <a id="logout_button">
             <i class="fa fa-sign-out" style="color:darksalmon "></i>
           </a>
         </div>
       </div>
     </div>
+    <script src="account.js"></script>
+    <script src="rateyourmood.js"></script>
   </body>
 </html>

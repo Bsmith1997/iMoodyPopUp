@@ -17,6 +17,10 @@
     rel="stylesheet" 
     href="style.css"
     />
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
 
   </head>
 
@@ -35,9 +39,12 @@
         Last name: <input type="text" name="lname" required><br>
         Email Address: <input type="text" name="email" required><br>
         Password: <input type="password" name="password" required><br>
-        <input type="submit" value="Submit">
+        <input class="btn btn-primary" type="button" id="back_button" value="Go back!" />
+        <input class="btn btn-primary" type="submit" value="Submit">
       </form>
       </div>
     </div>
+    <script src="functions.js"></script>
+    <script src="signin.js"></script>
   </body>
 </html>

@@ -17,6 +17,10 @@
     rel="stylesheet" 
     href="style.css"
     />
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
 
   </head>
 
@@ -32,11 +36,13 @@
     </div>
     <form id="myForm" align="middle" method="GET" action="account.html">
         Email Address: <input type="text" name="email" required><br>
-        Password: <input type="hidden" name="password" required><br>
-        <input type="button" onclick="location.href='popup.html'" value="Go back!" />
-        <input type="submit" value="Submit">
+        Password: <input type="password" name="password" required><br>
+        <input class="btn btn-primary" type="button" id="back_button" value="Go back!" />
+        <input class="btn btn-primary" type="submit" value="Submit">
       </form>
       </div>
     </div>
+    <script src="functions.js"></script>
+    <script src="signin.js"></script>
   </body>
 </html>

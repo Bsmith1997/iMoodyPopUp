@@ -1,0 +1,1 @@
+document.getElementById("rateyourmood_button").addEventListener("click", rate_your_mood);

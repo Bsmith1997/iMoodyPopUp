@@ -17,11 +17,16 @@
     rel="stylesheet" 
     href="style.css"
     />
+
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
     
   </head>
-  <script src="account.js"></script>
+  <script src="functions.js"></script>
   
-  <body onload="renderValues(); getEmojiVar(); clearCategories()">
+  <body id="body">
     <div class="modal-header">
       <h1 class="logo">
         iMoody
@@ -37,23 +42,19 @@
         <input type="checkbox" name="cat3" value="Cooking"> Cooking<br>
         <input type="checkbox" name="cat4" value="Outdoor"> Outdoor Activities<br>
         <input type="checkbox" name="cat5" value="Games"> Board Games<br>
-        <input type="submit" value="Submit">
+        <input class="btn btn-primary" type="submit" value="Submit">
       </form>
 
     </div>
     <div class="modal-icons">
       <div class="flex-container">
         <div class="flex">
-          <a href="popup.html" target="_blank">
+          <a id="logout_button">
             <i class="fa fa-sign-out" style="color:darksalmon "></i>
           </a>
         </div>
-        <div class="flex">
-            <a href="account.html" target="_blank">
-                <i class= "fa fa-home" style="color:darksalmon"></i>
-            </a>
-        </div>
       </div>
     </div>
+    <script src="account.js"></script>
   </body>
 </html>
