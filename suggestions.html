@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   </head>
-  <body onload="renderValues(); getRandomEvents()">
+  <body id="body">
     <div class="modal-header">
       <h1 class="logo">
         iMoody
@@ -33,7 +33,7 @@
     <p>Here are a list of suggestions that you might want to do!</p>
     <ul id="actlist">
     </ul>
-    <a class="btn btn-primary" href="account.html">Accept</a>
+    <a class="btn btn-primary" id="home_button">Accept</a>
     <a class="btn btn-danger" href="suggestions.html">Get new Activities</a>
 
     </div>

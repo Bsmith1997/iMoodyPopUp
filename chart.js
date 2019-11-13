@@ -1,4 +1,5 @@
 document.getElementById("logout_button").addEventListener("click", signout);
+document.getElementById("home_button").addEventListener("click", account_page);
 
 var start_time = retrieve_value("start_time");
 var end_time = retrieve_value("end_time");

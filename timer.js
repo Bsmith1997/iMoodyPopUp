@@ -7,3 +7,5 @@ document.getElementById("form").addEventListener("submit", function() {
     chrome.browserAction.setPopup({popup: "results.html"});
     window.location.href = "results.html";
 });
+
+document.getElementById("home_button").addEventListener("click", account_page);

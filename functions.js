@@ -27,14 +27,17 @@ function rate_your_mood() {
     chrome.browserAction.setPopup({popup: "rateyourmood.html"});
     window.location.href = "rateyourmood.html"
 }
-  
+
+function account_page() {
+    chrome.browserAction.setPopup({popup: "account.html"});
+    window.location.href = "account.html"
+}
   // This goes into eventPage.js and executes once on extension load
  function on_render() {
     chrome.storage.local.get("logged_in", function(data) {
         if(data.logged_in)
           chrome.browserAction.setPopup({popup: "account.html"});
-      });
-    
+      }); 
  } 
 
  keys = ['fname', 'lname', 'email', 'password', 'cat1', 'cat2', 'cat3', 'cat4', 'cat5'];
