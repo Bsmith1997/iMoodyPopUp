@@ -19,9 +19,12 @@ public class IMoodyPopUpRepository {
   EntityManager entityManager;
 
   @Transactional
-  public Person createPerson(String name) {
+  public Person createPerson(String firstName, String lastName, String email, String password) {
       Person p = new Person();
-      p.setName(name);
+      p.setFirstName(firstName);
+      p.setLastName(lastName);
+      p.setEmail(email);
+      p.setPassword(password);
       entityManager.persist(p);
       return p;
   }
