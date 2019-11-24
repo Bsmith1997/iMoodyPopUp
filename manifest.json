@@ -2,7 +2,7 @@
     "manifest_version" : 2,
     "name" : "iMoody",
     "description" : "Quick launch for iMoody application",
-    "version" : "1.0.1",
+    "version" : "1.0.2",
     "permissions": ["tabs", "<all_urls>", "contextMenus", "storage"],
     "content_scripts" : [
         {
