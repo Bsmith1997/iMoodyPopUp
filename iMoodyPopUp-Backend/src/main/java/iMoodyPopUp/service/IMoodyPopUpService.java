@@ -49,7 +49,7 @@ public class IMoodyPopUpService {
       if (name == null || name.trim().length() == 0) {
           throw new IllegalArgumentException("Person name cannot be empty!");
       }
-      Person person = personRepository.findPersonByName(name);
+      Person person = personRepository.findPersonByEmail(name);
       return person;
   }
 
