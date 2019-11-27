@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import iMoodyPopUp.model.Person;
+
 
 @Repository
 public class IMoodyPopUpRepository {
