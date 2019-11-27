@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @SpringBootApplication
-@ComponentScan({ "iMoodyPopUp.*" })
-
 public class IMoodyPopUpApplication {
 
 	public static void main(String[] args) {
