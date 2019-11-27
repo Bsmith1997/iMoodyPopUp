@@ -3,6 +3,7 @@ document.getElementById("myForm").addEventListener("submit", function() {
     var request = new XMLHttpRequest()
     var email = document.getElementById("email").value;
     var pword = document.getElementById("pword").value;
+    account_page();
     request.open('GET', 'https://imoodypopup-backend-1.herokuapp.com/login/' + email + '/' + pword, false)
     request.onload = function() {
       // Begin accessing JSON data here
@@ -17,6 +18,5 @@ document.getElementById("myForm").addEventListener("submit", function() {
       }
     }
     
-    request.send()
-    account_page();
+    request.send();
 })
