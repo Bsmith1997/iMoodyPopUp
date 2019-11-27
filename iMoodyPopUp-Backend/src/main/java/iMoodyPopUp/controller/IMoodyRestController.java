@@ -52,6 +52,13 @@ public class IMoodyRestController {
        return convertToDto(person);
    }
 
+   @PostMapping(value = { "/data/{username}", "/login/{username}/" })
+   public PersonDto updateData(@RequestParam double time, @RequestParam int prevVal, @RequestParam int postVal, @PathVariable("email") String email) throws IllegalArgumentException {
+	   Person p = service.getPerson(email);
+	   service.updateValue(p, time, prevVal, postVal);
+	   return convertToDto(p);
+   }
+
    private PersonDto convertToDto(Person s) {
      if (s == null) {
          throw new IllegalArgumentException("There is no such user");

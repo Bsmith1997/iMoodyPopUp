@@ -1,14 +1,15 @@
 package iMoodyPopUp.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import iMoodyPopUp.model.*;
-import iMoodyPopUp.dao.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import iMoodyPopUp.dao.IMoodyPopUpRepository;
+import iMoodyPopUp.dao.PersonRepository;
+import iMoodyPopUp.model.Person;
 
 @Service
 public class IMoodyPopUpService {
@@ -17,9 +18,9 @@ public class IMoodyPopUpService {
   IMoodyPopUpRepository iMoodyPopUpRepository;
   @Autowired
   PersonRepository personRepository;
-  
+
   @Transactional
-  public Person createPerson(String firstName, String lastName, String password, 
+  public Person createPerson(String firstName, String lastName, String password,
       String email) {
   if(!validatePassword(password)) {
       throw new IllegalArgumentException("Password must be 3 to 15 characters in length, "
@@ -37,19 +38,19 @@ public class IMoodyPopUpService {
   person.setLastName(lastName);
   person.setPassword(password);
   person.setEmail(email);
-  
-  
+
+
   personRepository.save(person);
   return person;
   }
-  
-  
+
+
   @Transactional
-  public Person getPerson(String name) {
-      if (name == null || name.trim().length() == 0) {
-          throw new IllegalArgumentException("Person name cannot be empty!");
+  public Person getPerson(String email) {
+      if (email == null || email.trim().length() == 0) {
+          throw new IllegalArgumentException("Email cannot be empty!");
       }
-      Person person = personRepository.findPersonByName(name);
+      Person person = personRepository.findPersonByEmail(email);
       return person;
   }
 
@@ -65,7 +66,7 @@ public class IMoodyPopUpService {
     }
     return resultList;
   }
-  
+
   private boolean validateEmail(String email) {
     if(email == null) {
         return false;
@@ -80,7 +81,7 @@ public class IMoodyPopUpService {
     }
     return true;
 }
-  
+
   /**
    * Validates a password
    * @param password
@@ -100,7 +101,29 @@ public class IMoodyPopUpService {
       }
       return false;
   }
-  
 
-  
+
+public void updateValue(Person p, double time, int prevVal, int postVal) {
+	double averageTime = p.getAverageTime();
+	int total = p.getTotal();
+	p.setPrevTime(time);
+	p.setPrevMoodValAfter(postVal);
+	p.setPrevMoodValBeg(prevVal);
+	p.setAverageTime(approxRollingAverage(averageTime, time, total));
+	p.setAverageValueAfter(approxRollingAverage(p.getAverageValueAfter(), postVal, total));
+	p.setAverageValueBeg(approxRollingAverage(p.getAverageValueBeg(), prevVal, total));
+	p.setTotal(total + 1);
+	personRepository.save(p);
+}
+
+double approxRollingAverage (double avg, double newSample, int numSamples) {
+
+    avg -= avg / numSamples;
+    avg += newSample / numSamples;
+
+    return avg;
+}
+
+
+
 }

@@ -1,12 +1,6 @@
 package iMoodyPopUp.dao;
 
-import java.sql.Date;
-import java.sql.Time;
-import java.util.List;
-
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -32,8 +26,8 @@ public class IMoodyPopUpRepository {
   }
 
   @Transactional
-  public Person getPerson(String name) {
-      Person p = entityManager.find(Person.class, name);
+  public Person getPerson(String email) {
+      Person p = entityManager.find(Person.class, email);
       return p;
   }
 }
