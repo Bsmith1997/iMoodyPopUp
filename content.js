@@ -1,1 +1,6 @@
-chrome.browserAction.setPopup({popup: "popup.html"});
+console.log("Working")
+chrome.runtime.sendMessage({
+    from: 'content',
+    subject: 'showPageAction',
+  });
+  

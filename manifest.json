@@ -3,12 +3,13 @@
     "name" : "iMoody",
     "description" : "Quick launch for iMoody application",
     "version" : "1.0.2",
-    "permissions": ["tabs", "<all_urls>", "contextMenus", "storage"],
+    "permissions": ["tabs", "<all_urls>", "contextMenus", "storage", "webNavigation", "*://*.facebook.com/*"],
     "content_scripts" : [
         {
             "matches" : [
                 "http://facebook.com/*",
-                "https://facebook.com/*"
+                "https://facebook.com/*", 
+                "*://*.facebook.com/*"
             ],
 
             "js": ["content.js"]
