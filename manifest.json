@@ -3,6 +3,7 @@
     "name" : "iMoody",
     "description" : "Quick launch for iMoody application",
     "version" : "1.0.2",
+    "icons" : {"128": "imoody_icon.png"},
     "permissions": ["tabs", "<all_urls>", "contextMenus", "storage", "webNavigation", "*://*.facebook.com/*"],
     "content_scripts" : [
         {

@@ -49,7 +49,7 @@ if(prev_time != 0) {
 
 if(avg_time != 0) {
     datasets.push({
-        label: 'Average',
+        label: 'Average (' + retrieve_value("total") + ' instances)',
         fill: false, 
         data: [{x: 0, y: avg_mood_val_beg}, 
         {x: ((avg_time) / 1000)
