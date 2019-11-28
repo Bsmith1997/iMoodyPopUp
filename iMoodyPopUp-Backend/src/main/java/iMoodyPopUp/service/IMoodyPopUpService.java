@@ -103,7 +103,7 @@ public class IMoodyPopUpService {
   }
 
 
-public void updateValue(Person p, double time, int prevVal, int postVal) {
+public Person updateValue(Person p, double time, int prevVal, int postVal) {
 	double averageTime = p.getAverageTime();
 	int total = p.getTotal();
 	p.setPrevTime(time);
@@ -114,9 +114,13 @@ public void updateValue(Person p, double time, int prevVal, int postVal) {
 	p.setAverageValueBeg(approxRollingAverage(p.getAverageValueBeg(), prevVal, total));
 	p.setTotal(total + 1);
 	personRepository.save(p);
+	return p;
 }
 
 double approxRollingAverage (double avg, double newSample, int numSamples) {
+	if(numSamples == 0) {
+		return newSample;
+	}
 
     avg -= avg / numSamples;
     avg += newSample / numSamples;
