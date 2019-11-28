@@ -125,21 +125,11 @@ function getEmojiVar() {
 }
 
 function retrieve_value(key) {
-    /*value = null;
-    chrome.storage.sync.get(key, function (obj) {
-        console.log(key, obj);
-        value = obj.key;
-    });*/
     return localStorage.getItem(key);
-
-    return value;
 }
 
 function jsonify(key, value) {
     var json_file = {};
     json_file[key] = value;
     localStorage.setItem(key, value);
-    /*chrome.storage.sync.set(json_file, function() {
-        console.log("Saved", key, value);
-    })*/
 }

@@ -35,16 +35,16 @@
       <p>Giving you more information about your social media usage</p>
     </div>
     <form id="myForm" align="middle" method="GET" action="account.html">
-        First name: <input type="text" name="fname" required><br>
-        Last name: <input type="text" name="lname" required><br>
-        Email Address: <input type="text" name="email" required><br>
-        Password: <input type="password" name="password" required><br>
+        First name: <input type="text" id="fname" name="fname" required><br>
+        Last name: <input type="text" id="lname" name="lname" required><br>
+        Email Address: <input type="text" id="email" name="email" required minlength="3" maxlength="15"><br>
+        Password: <input type="password" id="pword" name="password" required pattern="/\S+@\S+\.\S+/"><br>
         <input class="btn btn-primary" type="button" id="back_button" value="Go back!" />
         <input class="btn btn-primary" type="submit" value="Submit">
       </form>
       </div>
     </div>
     <script src="functions.js"></script>
-    <script src="signin.js"></script>
+    <script src="signup.js"></script>
   </body>
 </html>
